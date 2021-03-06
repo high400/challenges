@@ -5,7 +5,7 @@ If that value has more than one digit, continue reducing in this way until a sin
 The input will be a non-negative integer.
 
 Answer: 
-
+This one was wrong.
           function digital_root(n) {
             var digits = n.toString().split("").map(Number);
             var sum = 0;
@@ -22,3 +22,12 @@ Answer:
                 return sum;
             }
           }
+ This one is the CORRECT ONE:
+ 
+                    function digital_root(n){
+                    let result = 0;
+                    n.toString().split('').map (n => {
+                    result += Number(n)
+                    })
+                    return result > 9 ? digital_root(result) : result;
+                    }
